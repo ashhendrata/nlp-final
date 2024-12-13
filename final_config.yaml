@@ -1,0 +1,16 @@
+exp: TextClassification
+
+mode:
+  - evaluate
+
+models:
+  hf_text_classification_model:
+    - bert-base-uncased  # Replace with your desired HuggingFace model
+
+datafpath: nlp_final/evaluation_data/modified_imdb_reviews.tsv  # Path to your modified TSV file
+
+predfpath: nlp_final/predictions/imdb_predictions.tsv  # Path to save predictions
+
+checkFileColumns: True  # Ensure the TSV file contains necessary columns
+giveAllLabels: True     # Output probabilities for all labels (optional)
+loadAll: False          # Load models one at a time to save memory
